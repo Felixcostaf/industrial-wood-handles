@@ -75,22 +75,22 @@ export function Hero() {
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-background/40" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,transparent,var(--background)_78%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/85 to-forest/40" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,transparent,var(--foreground)_85%)] opacity-70" />
       <Dust />
 
-      <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-14 pt-32 lg:justify-center lg:px-8 lg:pb-24">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-14 pt-32 text-primary-foreground lg:justify-center lg:px-8 lg:pb-24">
         <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-muted-foreground backdrop-blur">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-1.5 text-xs uppercase tracking-[0.22em] backdrop-blur">
             Fábrica de cabos de madeira · B2B
           </span>
 
           <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-7xl">
-            Cabos de Madeira com <span className="text-ember">Qualidade, Precisão</span> e Produção
-            em Escala
+            Cabos de Madeira com <span className="text-primary-glow">Qualidade, Precisão</span> e
+            Produção em Escala
           </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground lg:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/80 lg:text-lg">
             Somos fabricantes especializados em cabos de madeira para panelas, frigideiras,
             caçarolas e utensílios domésticos. Atendemos indústrias, fabricantes e distribuidores
             com produção padronizada, modelos personalizados e controle de qualidade em todas as
@@ -104,7 +104,7 @@ export function Hero() {
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button asChild variant="outlineWood" size="xl">
+            <Button asChild variant="heroGhost" size="xl">
               <a href="#catalogo">
                 <BookOpen className="size-4" />
                 Ver Catálogo
@@ -113,29 +113,31 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-primary-foreground/20 bg-primary-foreground/20 sm:grid-cols-4">
           {stages.map((s, i) => (
             <button
               key={s.label}
               onClick={() => setActive(i)}
               className={cn(
-                "group bg-card/70 px-4 py-4 text-left backdrop-blur transition-colors duration-400",
-                i === active ? "bg-card" : "hover:bg-card",
+                "group px-4 py-4 text-left backdrop-blur transition-colors duration-500",
+                i === active
+                  ? "bg-primary-foreground/15"
+                  : "bg-forest/40 hover:bg-primary-foreground/10",
               )}
             >
               <span
                 className={cn(
                   "block text-[11px] font-medium tracking-[0.2em]",
-                  i === active ? "text-primary" : "text-muted-foreground",
+                  i === active ? "text-primary-glow" : "text-primary-foreground/60",
                 )}
               >
                 0{i + 1}
               </span>
               <span className="mt-1.5 block text-sm font-medium">{s.label}</span>
-              <span className="mt-0.5 block text-xs text-muted-foreground">{s.caption}</span>
+              <span className="mt-0.5 block text-xs text-primary-foreground/70">{s.caption}</span>
               <span
                 className={cn(
-                  "mt-3 block h-px bg-primary transition-all duration-700",
+                  "mt-3 block h-px bg-primary-glow transition-all duration-700",
                   i === active ? "w-full" : "w-6",
                 )}
               />
@@ -143,6 +145,7 @@ export function Hero() {
           ))}
         </div>
       </div>
+
     </section>
   );
 }

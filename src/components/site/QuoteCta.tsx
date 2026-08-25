@@ -15,15 +15,15 @@ export function QuoteCta() {
         loading="lazy"
         className="absolute inset-0 size-full object-cover"
       />
-      <div className="absolute inset-0 bg-background/85" />
-      <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent" />
+      <div className="absolute inset-0 bg-forest/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-forest via-forest/85 to-forest/45" />
 
-      <div className="relative mx-auto max-w-7xl px-5 py-24 lg:px-8 lg:py-32">
+      <div className="relative mx-auto max-w-7xl px-5 py-24 text-primary-foreground lg:px-8 lg:py-32">
         <Reveal className="max-w-2xl">
           <h2 className="text-3xl font-semibold leading-tight lg:text-5xl">
             Precisa de cabos de madeira para sua produção?
           </h2>
-          <p className="mt-5 text-muted-foreground lg:text-lg">
+          <p className="mt-5 text-primary-foreground/80 lg:text-lg">
             Solicite um orçamento e fale diretamente com nossa equipe para desenvolver ou fornecer
             os modelos ideais para sua empresa.
           </p>
@@ -34,7 +34,7 @@ export function QuoteCta() {
                 <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
               </a>
             </Button>
-            <Button asChild variant="outlineWood" size="xl">
+            <Button asChild variant="heroGhost" size="xl">
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 Falar pelo WhatsApp
               </a>
@@ -42,6 +42,7 @@ export function QuoteCta() {
           </div>
         </Reveal>
       </div>
+
     </section>
   );
 }

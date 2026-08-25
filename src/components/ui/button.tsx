@@ -22,6 +22,9 @@ const buttonVariants = cva(
           "group border border-border bg-card/60 backdrop-blur text-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary hover:text-primary",
         whatsapp:
           "bg-accent text-accent-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110",
+        heroGhost:
+          "group border border-primary-foreground/40 bg-primary-foreground/10 text-primary-foreground backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-foreground/20",
+
       },
       size: {
         default: "h-9 px-4 py-2",
