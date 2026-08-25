@@ -121,6 +121,8 @@
 @theme inline {
   --color-primary-glow: var(--primary-glow);
   --color-steel: var(--steel);
+  --color-forest: var(--foreground);
+
 }
 
 @layer base {
